@@ -34,3 +34,11 @@ npm install -D @tailwindcss/forms
 
 ## Install fortawesome
 ng add @fortawesome/angular-fontawesome
+
+## Install cookie
+Para guardar la imformacion en la cookie
+npm i typescript-cookie 
+
+## jwt-decode
+Se usa para decodear el jwt
+npm i jwt-decode

@@ -8,10 +8,10 @@
             <div class="flex items-center">
                 <ul class="flex items-center space-x-2 text-sm font-medium">
                     <li>
-                        <a class="block py-3 px-4 text-white">Workspaces</a>
+                        <a routerLink="/board" class="block py-3 px-4 text-white">Board</a>
                     </li>
                     <li>
-                        <a class="block py-3 px-4 text-white">Recent</a>
+                        <a routerLink="/user" class="block py-3 px-4 text-white">User</a>
                     </li>
                     <li>
                         <app-btn typeBtn="button" color="sky">Create</app-btn>
@@ -30,7 +30,7 @@
                 <button type="button" class="flex rounded-full" aria-expanded="false" type="button"
                     (click)="isOpen = !isOpen" cdkOverlayOrigin #menuOverlay="cdkOverlayOrigin">
 
-                    <img class="w-8 h-8 rounded-full" src="https://api.lorem.space/image/face?w=400&h=400"
+                    <img class="w-8 h-8 rounded-full" [src]="user?.avatar"
                         alt="user photo" />
                 </button>
             </div>
@@ -54,10 +54,10 @@
             </button>
         </div>
         <div class="py-3 px-4 flex items-center space-x-4">
-            <img class="w-10 h-10 rounded-full" src="https://api.lorem.space/image/face?w=400&h=400" alt="" />
+            <img class="w-10 h-10 rounded-full" [src]="user?.avatar" alt="" />
             <div class="space-y-1">
-                <div>Jese Leos</div>
-                <div class="text-sm text-gray-500">nico&#64;gmail.com</div>
+                <div>{{user?.name}}</div>
+                <div class="text-sm text-gray-500">{{user?.email}}</div>
             </div>
         </div>
         <ul class="py-1">
@@ -84,7 +84,10 @@
         </ul>
         <ul class="py-1">
             <li>
-                <a href="#" class="block py-2 px-4 text-sm text-gray-700">Log out</a>
+                <button  class="block py-2 px-4 text-sm text-gray-700" (click)="isValidToken()">IsValidToken</button>
+            </li>
+            <li>
+                <button  class="block py-2 px-4 text-sm text-gray-700" (click)="logOut()">Log out</button>
             </li>
         </ul>
     </div>
